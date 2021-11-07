@@ -3,7 +3,8 @@ from argparse import ArgumentParser
 from fishDetectYolo import *
 from json_output import *
 from realsense import *
-from weightDetectYolo import *
+from weightGrab import ScaleGrab
+
 
 def main():
     parser = ArgumentParser(description='measure detected objects using YOLO')
@@ -13,11 +14,13 @@ def main():
     while True:
 
         rs = RealSense()
-        wd = WeightDetector()
+        sg = ScaleGrab()
         fd = FishDetections()
+        
 
         input('press enter to begin capture loop . . .')
-
+        
+        sg.readout()
         _, depth_frame, color_frame = rs.grab_frame() 
         fd.detection(color_frame)
         fd.object_distance(depth_frame)

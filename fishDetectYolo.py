@@ -1,5 +1,4 @@
 import cv2
-from weightDetectYolo import *
 
 class FishDetections:
     def __init__(self):

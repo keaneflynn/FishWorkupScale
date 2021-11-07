@@ -4,7 +4,7 @@ import os
 import numpy as np
 
 class FileOutput:
-    def __init__(self, samplename, main_dataVector):
+    def __init__(self, samplename, main_dataVector, weight_g):
         self.date = str(datetime.now().isoformat())
         self.filedate = datetime.now().strftime("%m-%d-%Y-%H-%M-%S")
         self.samplename = samplename 
@@ -12,13 +12,14 @@ class FileOutput:
         self.confidence = [i[0] for i in main_dataVector[1]] 
         self.length = main_dataVector[2] 
         self.height = main_dataVector[3]
+        self.weight_g = weight_g
 
         self.vector_inputs = (self.date,
                               self.samplename,
                               self.classname,
                               self.confidence,
                               self.length,
-                              self.height)
+                              self.weight_g)
 
     def test_json(self, class_list):
         indexList_length = len(self.classname)
@@ -43,7 +44,7 @@ class FileOutput:
             "class_name": class_list[self.classname[i]],
             "confidence": np.float64(self.confidence[i]),
             "length_mm": np.float64(self.length[i]),
-            "height_mm": np.float64(self.height[i]),
+            "weight_g": np.float64(self.weight_g),
             }
             
             with open("{}/{}.json".format(directory, filename), 'w') as f:
