@@ -17,7 +17,7 @@ Once the above steps are completed, issue the following command in your terminal
 ```
 python main.py <samplename>
 ```
-Note that there is a positional argument of 'samplename' needed for the process to function as this information will be passed to the .json output files.
+\*Note that there is a positional argument of 'samplename' needed for the process to function as this information will be passed to the .json output files.
 
 ## Program info and output
 Upon launching this program, it will begin a loop process that will be hung until you press the "Print" button on the scale, or whatever button is used to issue a readout on your scale (untested for other scale models). Upon pressing this button, your scale will send the immediate weight value through your COM port to your computer where it will be stored. The loop then continues to capture an image from the Intel RealSense camera where the object in question will be detected and the length of the object (horizontal distance) will be stored. All of these stored data will be printed out to a .json file along with the sample name and the current date and time in ISO format in the output directory after each press of the "Print" button on your scale. These files can easily be converted to whatever desired format later through packages such as [JQ](https://stedolan.github.io/jq/) from your terminal.
