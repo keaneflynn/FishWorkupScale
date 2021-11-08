@@ -80,5 +80,5 @@ class FishDetections:
                            self.object_confidence,
                            self.object_length_mm,
                            self.object_height_mm)
-        return(main_dataVector, class_list)
+        return main_dataVector, class_list
         

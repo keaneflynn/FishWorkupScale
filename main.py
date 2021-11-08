@@ -12,13 +12,9 @@ def main():
     args = parser.parse_args()
 
     while True:
-
         rs = RealSense()
         sg = ScaleGrab()
         fd = FishDetections()
-        
-
-        input('press enter to begin capture loop . . .')
         
         weight_g = sg.readout()
         _, depth_frame, color_frame = rs.grab_frame() 
