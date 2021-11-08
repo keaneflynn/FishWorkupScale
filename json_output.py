@@ -14,7 +14,7 @@ class FileOutput:
         self.height = main_dataVector[3]
         self.weight_g = weight_g
 
-        self.vector_inputs = (self.date,
+        self.vector_inputs = (self.date,        #This vector is for the test_json function that outputs concatenated data
                               self.samplename,
                               self.classname,
                               self.confidence,
@@ -29,7 +29,8 @@ class FileOutput:
                                   class_list[self.classname[i]],
                                   self.confidence[i],
                                   self.length[i],
-                                  self.height[i])
+                                  self.height[i],
+                                  self.weight_g)
             print(self.vector_inputs)
         return self.vector_inputs
 

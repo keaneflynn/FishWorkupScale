@@ -15,7 +15,6 @@ class RealSense:
         frame = self.pipeline.wait_for_frames()
         depth_frame = frame.get_depth_frame()
         color_frame = frame.get_color_frame()
-        
         depth_frame = np.asanyarray(depth_frame.get_data())
         color_frame = np.asanyarray(color_frame.get_data())
         if depth_frame is None or color_frame is None:

@@ -20,7 +20,7 @@ def main():
 
         input('press enter to begin capture loop . . .')
         
-        sg.readout()
+        weight_g = sg.readout()
         _, depth_frame, color_frame = rs.grab_frame() 
         fd.detection(color_frame)
         fd.object_distance(depth_frame)
@@ -29,7 +29,7 @@ def main():
         fd.draw_output(color_frame)
         main_dataVector, class_list = yd.json_data()
 
-        fo = FileOutput(args.samplename, main_dataVector)
+        fo = FileOutput(args.samplename, main_dataVector, weight_g)
         fo.to_json(class_list)
 
         cv2.imshow("color frame", color_frame)
