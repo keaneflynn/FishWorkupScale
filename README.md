@@ -9,6 +9,5 @@ git clone https://github.com/keaneflynn/FishWorkupScale.git && cd FishWorkupScal
 ```
 Then to install the necessary dependencies to run this script, issue the following commands in your terminal to run the bash script:
 ```
-chmod 755 dependencies.sh
 ./dependencies.sh
 ```
