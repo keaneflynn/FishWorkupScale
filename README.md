@@ -5,7 +5,7 @@ Hello! Welcome to yet another of my neural network fisheries contraptions. In th
 ## To download and setup program
 After moving into the desired local directory to download the repository, sssue the following command in your terminal to download this repository:
 ```
-git clone https://github.com/keaneflynn/FishWorkupScale.git && cd /FishWorkupScale
+git clone https://github.com/keaneflynn/FishWorkupScale.git && cd FishWorkupScale/
 ```
 Then to install the necessary dependencies to run this script, issue the following commands in your terminal to run the bash script:
 ```
