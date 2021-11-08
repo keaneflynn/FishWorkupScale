@@ -5,18 +5,18 @@ class FishDetections:
         self.confidence = 0.3
         self.nms = 0.2
         self.colors = [(255, 255, 0), (0, 255, 255), (0, 255, 0), (255, 0, 0)]
-        self.sensor_width_mm = 3.68 
-        self.sensor_height_mm = 2.1
+        self.sensor_width_mm = 3.60 
+        self.sensor_height_mm = 2.10
         self.focal_length = 1.88
         self.image_width_pixels = 1280
         self.image_height_pixels = 720
 
         self.class_names = []
-        with open("model_data/coco.names.txt", "r") as f:
+        with open("model_data/coco.names", "r") as f:
             self.class_names = [cname.strip() for cname in f.readlines()]
         
         #loading yolo net
-        net = cv2.dnn.readNet("model_data/yolov4-tiny.weights","model_data/yolov4-tiny.cfg.txt")
+        net = cv2.dnn.readNet("model_data/yolov4-tiny.weights","model_data/yolov4-tiny.cfg")
         net.setPreferableBackend(cv2.dnn.DNN_BACKEND_OPENCV)
         net.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
 
