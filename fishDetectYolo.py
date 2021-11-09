@@ -16,7 +16,7 @@ class FishDetections:
             self.class_names = [cname.strip() for cname in f.readlines()]
         
         #loading yolo net
-        net = cv2.dnn.readNet("model_data/yolov4-tiny.weights","model_data/yolov4-tiny.cfg")
+        net = cv2.dnn.readNet("model_data/yolov4-tiny.weights","model_data/yolov4-tiny.cfg") #swap new model in here
         net.setPreferableBackend(cv2.dnn.DNN_BACKEND_OPENCV)
         net.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
 
@@ -67,12 +67,14 @@ class FishDetections:
             self.object_height_mm.append((self.object_distances[i] * self.box_height[i] * self.sensor_height_mm) / (self.focal_length * self.image_height_pixels))
         return self.object_height_mm
 
-    def draw_output(self, color_frame):
+    def draw_output(self, color_frame,weight_g):
         for (classid, score, box, length) in zip(self.object_class, self.object_confidence, self.object_boxes, self.object_length_mm):
             color = self.colors[int(classid) % len(self.colors)]
             frame_label = "%s : %f, %i mm wide" % (self.class_names[classid[0]], score, round(length))
+            weight_label = "Weight: "+str(weight_g)+" grams"
             cv2.rectangle(color_frame, box, color, 2)
             cv2.putText(color_frame, frame_label, (box[0], box[1] - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
+            cv2.putText(color_frame, weight_label, (5,15), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255,255,255), 2)
         
     def json_data(self):
         class_list = self.class_names

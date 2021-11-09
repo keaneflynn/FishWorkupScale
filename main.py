@@ -8,12 +8,13 @@ from weightGrab import ScaleGrab
 
 def main():
     parser = ArgumentParser(description='measure detected objects using YOLO')
-    parser.add_argument('--samplename', type=str, help='unique name or identifier for the sample of data you are collecting')
+    parser.add_argument('samplename', type=str, help='unique name or identifier for the sample of data you are collecting')
     args = parser.parse_args()
 
+    rs = RealSense()
+    sg = ScaleGrab()
+
     while True:
-        rs = RealSense()
-        sg = ScaleGrab()
         fd = FishDetections()
         
         weight_g = sg.readout()
@@ -22,8 +23,8 @@ def main():
         fd.object_distance(depth_frame)
         fd.object_length()
         fd.object_height()
-        fd.draw_output(color_frame)
-        main_dataVector, class_list = yd.json_data()
+        fd.draw_output(color_frame, weight_g)
+        main_dataVector, class_list = fd.json_data()
 
         fo = FileOutput(args.samplename, main_dataVector, weight_g)
         fo.to_json(class_list)

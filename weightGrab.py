@@ -2,13 +2,12 @@ import serial
 import serial.tools.list_ports as portScan
 import re
 
-class ScaleGrab:   
+class ScaleGrab:
     def __init__(self):
         ports = portScan.comports()
         for i in ports:
             store = i.device
         self.ser = serial.Serial(store)
-
     def readout(self):
         byteRead = self.ser.readline()
         weight_str = byteRead.decode("utf-8")
