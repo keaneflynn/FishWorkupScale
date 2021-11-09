@@ -12,7 +12,6 @@ Then to install the necessary dependencies to run this script, issue the followi
 ```
 ./dependencies.sh
 ```
-
 ## Running the program
 Once the above steps are completed, issue the following command in your terminal to run the program that will enter you into a data capture loop:
 ```
