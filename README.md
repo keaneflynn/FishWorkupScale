@@ -28,6 +28,6 @@ Upon launching this program, it will begin a loop process that will be hung unti
 
 ## Program background, inspiration, and funding sources
 This project was created with the hope to improve data collection for fisheries research in the Mekong Delta watershed. Sampling fishes at their field sites can be arduous and time consuming and I hope that this can imporove throughput. The Mekong Delta is currently experiencing drastic impacts from land and water use changes and it is imperative that the fishery is monitored to sustain this resource and, consequently, the local peoples livelihood and culture.   
-I would like to thank the Global Water Center of UNR (Aaron Koning, Dr. Zeb Hogan, and Dr. Sudeep Chandra) for funding the equipment necessary to test this hardware/software combination out to create this program. I hope that someone can use this somehow to improve their workflow for whatever they are working on. As always, shoot me a message if you have any questions or recommendations for features to add.  
+I would like to thank the Global Water Center of UNR (Dr. Aaron Koning, Dr. Zeb Hogan, and Dr. Sudeep Chandra) for funding the equipment necessary to test this hardware/software combination out to create this program. I hope that someone can use this somehow to improve their workflow for whatever they are working on. As always, shoot me a message if you have any questions or recommendations for features to add.  
 "Peace, love, and taco grease" - Guy Fieri
 
