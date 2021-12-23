@@ -34,7 +34,7 @@ def main():
         
     rs.release_frame()
     cv2.destroyAllWindows()
-    exit(1)
+    exit(0)
 
 if __name__ == '__main__':
     main()
